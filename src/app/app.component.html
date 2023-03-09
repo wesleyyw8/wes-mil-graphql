@@ -21,6 +21,7 @@
       <div class="col-sm-12"
            [@slideInAnimation]="o.isActivated ? o.activatedRoute : ''">
         <router-outlet #o="outlet"></router-outlet>
+        <router-outlet name="popup"></router-outlet>
       </div>
     </div>
   </div>

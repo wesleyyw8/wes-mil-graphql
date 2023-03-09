@@ -6,6 +6,9 @@
   cursor: pointer;
 }
 
-.navbar-light .navbar-nav .nav-link.active {
-  color: #007ACC
+nav.navbar-light {
+  margin-bottom: 10px;
+  .navbar-nav .nav-link.active {
+    color: #007ACC
+  }
 }

@@ -1,1 +1,32 @@
-<p>products works!</p>
+<div class="card">
+  <div class="card-header">
+    List of Categories
+  </div>
+
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table mb-0">
+        <thead>
+          <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of productList">
+            <td>
+              <img 
+              [src]="constants.imageRoot + product.image?.path"
+              [title]="product.image?.title">
+            </td>
+            <td>{{ product.name }}</td>
+            <td>
+              <a [routerLink]="['/',{  outlets: { popup: ['details', product._id] } }]">Click to see details about this product</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ApiService } from '../api.service';
+import { Product } from '../models/product';
+import { Constants } from './../constants';
 
 @Component({
   selector: 'app-product-details',
@@ -7,11 +10,26 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./product-details.component.scss']
 })
 export class ProductDetailsComponent {
-  constructor(private route: ActivatedRoute) {
-    console.log(this.route.snapshot.paramMap.get('id'));
-    console.log(this.route.snapshot.paramMap.get('productId'));
+  private productId: string;
+  public constants = Constants;
+  public product: Product | undefined;
+
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private apiService: ApiService
+  ) {
+    this.productId = this.route.snapshot.paramMap.get('productid') || '';
   }
-  
+
   ngOnInit(): void {
+    this.apiService
+      .getProductById(this.productId)
+      .valueChanges.subscribe((result: any) => {
+        this.product = result.data.getProduct;
+      });
+  }
+  onClose(): void {
+    this.router.navigate([{ outlets: { popup: null } }]);
   }
 }
