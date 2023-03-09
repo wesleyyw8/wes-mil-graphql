@@ -4,14 +4,14 @@ import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ProductsComponent } from './products/products.component';
-// http://localhost:4200/home/44/products/2
+
 const routes: Routes = [
   {
     component: HomeComponent,
-    path: 'home'
+    path: ''
   },
   {
-    path: 'home/:id/products',
+    path: 'categories/:id/products',
     component: ProductsComponent
   },
   {
@@ -22,11 +22,6 @@ const routes: Routes = [
   {
     component: AboutComponent,
     path: 'about'
-  },
-  {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
   }
   // {
   //   path: '**',

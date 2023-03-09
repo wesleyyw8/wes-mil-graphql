@@ -16,7 +16,7 @@
         <tbody>
           <tr *ngFor="let category of categories">
             <td>
-              <a [routerLink]="['/home',category._id, 'products']">
+              <a [routerLink]="['/categories', category._id, 'products']">
                 {{ category.slug }}
               </a>
             </td>

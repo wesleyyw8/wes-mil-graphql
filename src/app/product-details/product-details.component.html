@@ -1,8 +1,11 @@
 <div class="card" *ngIf="product">
+  
   <img class="card-img-top" [src]="constants.imageRoot + product.image?.path" 
   alt="product?.image?.title">
   <div class="card-body">
-    <h5 class="card-title">{{product.name}}</h5>
+    <h5 class="card-title">If you order before midnight you'll get it by tomorrow!</h5>
+    <p class="card-text">Time remaining for tomorrow: {{countDownLabel}}</p>
+    <p class="card-text">{{product.name}}</p>
     <p class="card-text">{{product.description}}</p>
     <p class="card-text">{{product.slug}}</p>
     <p class="card-text">{{product.price|currency:"USD":"symbol"}}</p>
