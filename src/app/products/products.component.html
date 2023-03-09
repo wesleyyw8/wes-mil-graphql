@@ -17,8 +17,8 @@
           <tr *ngFor="let product of productList">
             <td>
               <img 
-              [src]="constants.imageRoot + product.image?.path"
-              [title]="product.image?.title">
+              [src]="constants.imageRoot + product.image.path"
+              [title]="product.image.title">
             </td>
             <td>{{ product.name }}</td>
             <td>
