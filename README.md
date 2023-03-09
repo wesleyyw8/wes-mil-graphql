@@ -20,6 +20,8 @@ Run `npm run start` for a dev server. Navigate to `http://localhost:4200/`.
 6 - I used Angular's pipe feature to convert the currency to USD.  
 7 - I used TakeShape as a headless CMS.  
 8 - Regarding the "Grid of 3x other products from same category (you can query products using the slug from URL). Show the image, name and link to that product page" requirement, I decided not to implement it because the popup would be in front of the list.   However, I could have implemented the query here:  
+````
+```
 query getProductListByCategory($_categoryId: ID!, $_productId: ID!) {  
   getProductList(  
     where: {AND: [{category: {_id: {eq: $_categoryId}}}, {id: {neq: $_productId}}]}  
@@ -31,3 +33,6 @@ query getProductListByCategory($_categoryId: ID!, $_productId: ID!) {
     }  
   }  
 }  
+```
+````
+  
