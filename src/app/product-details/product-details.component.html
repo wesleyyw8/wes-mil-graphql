@@ -1,6 +1,6 @@
 <div class="card" *ngIf="product">
   
-  <img class="card-img-top" [src]="constants.imageRoot + product.image.path" 
+  <img class="card-img-top" [src]="constants.imageRoot + product.image?.path" 
   alt="product?.image?.title">
   <div class="card-body">
     <h5 class="card-title">If you order before midnight you'll get it by tomorrow!</h5>
